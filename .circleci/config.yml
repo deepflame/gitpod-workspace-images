@@ -14,8 +14,7 @@ jobs:
       - run:
           name: Commit them to images branch
           command: |
-            git --version
-            git checkout origin/images
+            git checkout -b -f images origin/images
             git add images
             git commit -m "update images"
             git push
