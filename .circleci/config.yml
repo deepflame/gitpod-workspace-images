@@ -14,6 +14,8 @@ jobs:
       - run:
           name: Commit them to images branch
           command: |
+            git config --global user.email "ci@frontrunner.io"
+            git config --global user.name "CI Bot"
             git checkout -f -b images origin/images
             git add images
             git commit -m "update images"
