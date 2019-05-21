@@ -21,5 +21,4 @@ jobs:
             git config --global user.name "CI Bot"
             git checkout -f -b images origin/images
             git add images
-            git commit -m "update images" --allow-empty
-            git push
+            git diff --quiet && git diff --staged --quiet || git commit -m 'update images' && git push
