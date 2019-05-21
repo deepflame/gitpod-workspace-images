@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6
+
+    steps:
+      - checkout
+
+      - run:
+          name: Generate Docker files
+          command: ./run.sh
+
+      - run:
+          name: Commit them to images branch
+          command: |
+            git config --global user.email "ci@frontrunner.io"
+            git config --global user.name "CI Bot"
+            git checkout -f -b images origin/images
+            git add images
+            git commit -m "update images" --allow-empty
+            git push

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-images=( full postgresql )
+images=( full postgres )
 for i in "${images[@]}"
 do
   mkdir -p images/$i
