@@ -15,7 +15,8 @@ jobs:
           name: Commit them to images branch
           command: |
             git --version
+            git fetch
             git checkout images
-            git add images --ignore-missing
+            git add images
             git commit -m "update images"
             git push
