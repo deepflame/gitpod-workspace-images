@@ -16,6 +16,6 @@ jobs:
           command: |
             git --version
             git checkout images
-            git add images
+            git add images --ignore-missing
             git commit -m "update images"
             git push
